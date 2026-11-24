@@ -1,0 +1,10 @@
+{
+  "created_at": "2026-11-18T13:15:42",
+  "source_detail_csv": "D:\\01.期刊论文\\03.我的论文\\PJS00000029#2100 VMD中心频率定位误差改进方法\\Code\\experiments\\VMD_CFCVMD_ModeCount_Success_alpha100K\\per_signal_results.csv",
+  "definition": "对每个真实模态，若 VMD+CFC 与 CFC-VMD 的绝对误差均 < threshold_hz，则纳入配对误差比较；逐模态比较时误差更小者获胜。",
+  "threshold_hz": 1.0,
+  "tie_tolerance_hz": 1e-06,
+  "n_paired_modes_total": 44858,
+  "n_common_success_signals_total": 6271,
+  "note": "diff_vmd_minus_cfcvmd_hz > 0 表示 CFC-VMD 误差更小；< 0 表示 VMD+CFC 误差更小。"
+}

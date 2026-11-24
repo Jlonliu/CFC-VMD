@@ -1,0 +1,73 @@
+{
+  "created_at": "2026-11-18T12:29:46",
+  "script": "D:\\01.期刊论文\\03.我的论文\\PJS00000029#2100 VMD中心频率定位误差改进方法\\Code\\compare_vmd_cfcvmd_success.py",
+  "project_root": "D:\\01.期刊论文\\03.我的论文\\PJS00000029#2100 VMD中心频率定位误差改进方法\\Code",
+  "K_values": [
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10
+  ],
+  "n_signals_per_K": 1000,
+  "success_definition": "所有 K 个 |f_est - f_true| < threshold Hz（匈牙利匹配）",
+  "threshold_hz": 1.0,
+  "signal_model": "Σ_k [1 + m_k cos(2π f_a,k t + Δφ_k)] cos(2π f_c,k t + β_k sin(2π f_f,k t))",
+  "modulation_parameters": {
+    "f_f_hz": [
+      3.0,
+      10.0
+    ],
+    "f_a_hz": "f_f 或 f_f/2，等概率",
+    "m": [
+      0.0,
+      0.9
+    ],
+    "beta": [
+      0.0,
+      2.0
+    ],
+    "phase_difference_rad": [
+      0.0,
+      6.283185307179586
+    ],
+    "am_phase": "Δφ",
+    "fm_phase": 0.0
+  },
+  "carrier_placement": {
+    "type": "stratified_uniform",
+    "band_hz": [
+      0.0,
+      600.0
+    ],
+    "margin_ratio": 0.15,
+    "note": "将 0~band_max 等分为 K 段，每段内均匀随机，段两端留白"
+  },
+  "vmd_settings": {
+    "alpha_rule": "100*K",
+    "alpha_fixed": null,
+    "tau": 0.0,
+    "DC": 0,
+    "init": 1,
+    "tol": 1e-05,
+    "feedback_cfcvmd": true
+  },
+  "sampling": {
+    "fs_hz": 1400.0,
+    "duration_s": 1.0,
+    "n_samples": 1400,
+    "noise": 0.0,
+    "normalization": "每个混合信号除以其最大绝对值"
+  },
+  "seed": 20261118,
+  "workers": 2,
+  "versions": {
+    "python": "3.13.14",
+    "numpy": "2.4.6",
+    "vmdpy": "unknown"
+  }
+}

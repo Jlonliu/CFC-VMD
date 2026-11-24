@@ -122,6 +122,9 @@ Some auxiliary scripts (for example, visualization, data loading) were produced 
 `VMDOmegaCompareVisual.csv`, `CFCOmegaCompareVisual.csv` — Statistical data of the frequency-locating comparison experiment between VMD and CFC-VMD.
 `VMDOmegaCompareVisual.csv`、`CFCOmegaCompareVisual.csv` — VMD与CFC-VMD 频率定位对比实验的统计数据。
 
+`VMDOmegaCompareVisualNoise10db.csv`, `CFCOmegaCompareVisualNoise10db.csv` — Statistical data with noise of the frequency-locating comparison experiment between VMD and CFC-VMD.
+`VMDOmegaCompareVisualNoise10db.csv`、`CFCOmegaCompareVisualNoise10db.csv` — VMD与CFC-VMD 频率定位对比实验的加噪统计数据。
+
 `VMDOmegaIterationCase.csv` — Result data of the iteration-visualization experiment for center-frequency locating by VMD and CFC-VMD.
 `VMDOmegaIterationCase.csv` — VMD 与 CFC-VMD 中心频率定位迭代可视化实验的结果数据。
 

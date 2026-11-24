@@ -193,14 +193,14 @@ def ExperimentVMDOmegaCompareVisual():
         K=1,# 随机生成1个模态
         base_freqs=(200,400),# 随机生成基本频率在100到150Hz之间
         freq_intervals=(100,150),# 固定频率在100Hz~150Hz
-        mod_freqs=(5,20),# 调制频率在5Hz~10Hz，以满足瞬时频率缓变条件
+        mod_freqs=(3,10),# 调制频率在5Hz~10Hz，以满足瞬时频率缓变条件
         harmonics=[1],# 调制频率 = fm
         am_phases=(0, 2*np.pi),# 调幅相位在0到2π之间
         fm_phases=(0, 2*np.pi),# 调频相位在0到2π之间
         am_coeffs=(0, 0.9),# 随机生成调幅系数在0到1之间，保证包络不过零
         mod_depths=(0, 2),# 0到2之间以满足窄带条件
-        # noise_std=0.562,        # [新增] 噪声标准差，0 则无噪声
-        # noise_seed=42,      # [新增] 噪声随机种子，None 则每个信号独立
+        noise_std=0.562,        # [新增] 噪声标准差，0 则无噪声
+        noise_seed=42,      # [新增] 噪声随机种子，None 则每个信号独立
         fs=1200, # 采样率
         duration=1.0, # 信号时长
         N=5000,# 信号数量
@@ -233,7 +233,7 @@ def ExperimentVMDOmegaCompareVisual():
             match,errors = HungarianMatchWithErrors(omega[-1,:]*1200, params['details'][i]['carrier_freqs'])
             error_list.append(errors[j])
 
-    savepath = os.path.join(project_root , "experiments" , "VMDOmegaCompareVisual.csv")
+    savepath = os.path.join(project_root , "experiments" , "VMDOmegaCompareVisualNoise2.csv")
     save_array([fc_list,fmod_list,m_list,beta_list, np.array(beta_list)*np.array(fmod_list),domega_list,error_list], 
             savepath, 
             header=["fc","fmod","m","beta", "delta f","domega","vmderror"])
@@ -264,7 +264,7 @@ def ExperimentVMDOmegaCompareVisual():
             match,errors = HungarianMatchWithErrors(omega[-1,:]*1200, params['details'][i]['carrier_freqs'])
             error_list.append(errors[j])
 
-    savepath = os.path.join(project_root , "experiments" , "CFCOmegaCompareVisual.csv")
+    savepath = os.path.join(project_root , "experiments" , "CFCOmegaCompareVisualNoise3.csv")
     save_array([fc_list,fmod_list,m_list,beta_list, np.array(beta_list)*np.array(fmod_list),domega_list,error_list], 
             savepath, 
             header=["fc","fmod","m","beta", "delta f","domega","vmderror"])
@@ -869,7 +869,7 @@ if __name__ == "__main__":
     # ExperimentBiasShow3()# 进行AMFM信号不对称性展示实验
     # ExperimentCFCShow()# 进行CFC校准能力展示
     # ExperimentOmegaCase()# 进行VMD中心频率定位个例实验
-    # ExperimentVMDOmegaCompareVisual() # 进行VMD中心频率定位精度对比试验
+    ExperimentVMDOmegaCompareVisual() # 进行VMD中心频率定位精度对比试验
     # ExperimentIterationCase() # 进行VMD与CFCVMD中心频率定位迭代可视化
     """***************"""
     
